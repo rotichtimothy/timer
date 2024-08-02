@@ -1,0 +1,108 @@
+/* styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden; /* Prevents scrolling */
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+.timer-container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    width: 90%;
+    max-width: 400px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.timer-container:hover {
+    transform: scale(1.05);
+}
+
+.timer-display {
+    font-size: 60px;
+    margin: 30px 0;
+    color: #ffffff;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.buttons button {
+    font-size: 18px;
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+.buttons button:active {
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timer-display {
+        font-size: 48px;
+    }
+    
+    .buttons button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timer-display {
+        font-size: 36px;
+    }
+
+    .buttons button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
